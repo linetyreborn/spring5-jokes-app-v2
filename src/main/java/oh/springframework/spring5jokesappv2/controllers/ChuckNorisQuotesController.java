@@ -12,7 +12,7 @@ public class ChuckNorisQuotesController {
     public ChuckNorisQuotesController(RandomQuoteService randomQuoteService) {
         RandomQuoteService = randomQuoteService;
     }
-    @RequestMapping("/")
+    @RequestMapping({"/",""})
     public String getRandomQuote(Model model) {
         model.addAttribute("randomQuote", RandomQuoteService.getRandomQuote());
         return "quotes/randomQuote";
