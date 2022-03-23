@@ -1,20 +1,20 @@
 package oh.springframework.spring5jokesappv2.services;
 
-import oh.springframework.spring5jokesappv2.models.ChuckNorisQuotesGenerator;
+import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RandomQuoteImpl implements RandomQuoteService{
 
-    private ChuckNorisQuotesGenerator chuckNorisQuotesGenerator;
+    private final ChuckNorrisQuotes chuckNorisQuotes;
 
-    public RandomQuoteImpl(ChuckNorisQuotesGenerator chuckNorisQuotesGenerator) {
-        this.chuckNorisQuotesGenerator = chuckNorisQuotesGenerator;
+    public RandomQuoteImpl(ChuckNorrisQuotes chuckNorisQuotes) {
+        this.chuckNorisQuotes = chuckNorisQuotes;
     }
 
     @Override
     public String getRandomQuote() {
-        return chuckNorisQuotesGenerator.getRandomQuote();
+        return chuckNorisQuotes.getRandomQuote();
     }
 
 }
